@@ -1,0 +1,59 @@
+'''
+Napravite srpsko-engleski rječnik. Ključ podataka neka bude riječ na srpskom, 
+a vrijednost toga ključa neka bude engleska riječ. Napuniti rječnik s 5 elemenata. 
+Napraviti beskonačnu petlju koja učitava s tipkovnice srpske riječi. Za svaku učitanu riječ 
+(ako prevod postoji) ispisati prevod, a ako tražena riječ ne postoji, ispisati poruku da ta 
+riječ ne postoji u rječniku. Ponuditi da se rijec prevede i prevod doda u riječnik. Učitavanje 
+raditi tako dugo dok se ne unese znak 'x'. Potrebno je obratiti pažnju na mala/velika slova. 
+Prijedlog je pretvarati sve u mala slova.
+'''
+
+
+class Dict:
+    def __init__(self):
+        self.rijecnik = {
+            "voce": "fruits",
+            "ruka": "arm",
+            "ulica": "street",
+            "cesta": "road",
+            "stolica": "chair"
+        }
+
+    def __str__(self):
+        pass
+
+    def View(self):
+        time = True
+        while time == True:
+            print("Add to translate:")
+            inputingg = input()
+            for i, y in self.rijecnik.items():
+                if inputingg.lower() in self.rijecnik:
+                    print("|")
+                    print(self.rijecnik.get(inputingg.lower()))
+                    break
+
+                else:
+                    print("Add missing key:")
+                    inputing = input()
+                    print("Add missing value:")
+                    inputing2 = input()
+                    self.rijecnik[inputing.lower()] = inputing2.lower()
+                    break
+
+            txt = "Press X to exit, or any other key to continue:"
+            w = len(txt)
+            print("*" * w)
+            print(txt)
+            print("*" * w)
+            ins1 = input()
+            if ins1.lower() == "x":
+                time = False
+                print("This is it... :(")
+                print("Bitno da radi")
+            elif ins1.lower() == "c":
+                continue
+
+
+obj_dict = Dict()
+obj_dict.View()
