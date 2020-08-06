@@ -34,6 +34,7 @@ class Dict:
                     break
 
                 else:
+                    print("Word is missing from dict.")
                     print("Add missing key:")
                     inputing = input()
                     print("Add missing value:")
